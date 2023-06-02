@@ -1,24 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   addDocumentLite,
   getDocumentsLite,
-} from "../config/firebase/service/FireStoreLite";
+} from "../Config/firebase/service/FireStoreLite";
 import { Link } from "react-router-dom";
+import { AppContext } from "../Context/AppProviders";
+
 const FirestoreLite = () => {
+  const { setId } = useContext(AppContext);
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [click, setClick] = useState(false);
   const [FetchData, setFetchData] = useState([]);
 
   const handleSubmit = (e) => {
-    const data = {
-      name: name,
-      age: age,
-    };
-    e.preventDefault();
-    addDocumentLite("Firebase", data).then(() => setClick(true));
-    setName("");
-    setAge("");
+    setId("sudo");
+    // const data = {
+    //   name: name,
+    //   age: age,
+    // };
+    // e.preventDefault();
+    // addDocumentLite("Firebase", data).then(() => setClick(true));
+    // setName("");
+    // setAge("");
   };
 
   useEffect(() => {
@@ -50,10 +54,10 @@ const FirestoreLite = () => {
           <label className="mb-1">Tuổi: </label>
           <div className="p-3 ">
             <input
-              value={age}
+              // value={age}
               type="text"
               className="outline-none"
-              onChange={(e) => setAge(e.target.value)}
+              // onChange={(e) => setId(e.target.value)}
             />
           </div>
         </div>

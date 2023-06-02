@@ -1,6 +1,6 @@
-import Home from "../components/Home";
-import FirestoreLite from "../components/FirestoreLite";
-import Detail from "../components/Detail";
+import Home from "../Components/Home";
+import FirestoreLite from "../Components/FirestoreLite";
+import Detail from "../Components/Detail";
 export const AllRoutes = [
   {
     path: "/",
